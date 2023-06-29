@@ -26,6 +26,11 @@ class UserController{
             res.json({code : 500 , message: 'fail'})
         })
     }
+    deleteAvartar(req,res){
+        Users.updateOne({_id : req._id},{URL_Avatar: ""})
+        .then(res.json({code : 200 ,message: 'success'}))
+        .catch(res.json({code : 500 , message: 'fail'}))
+    }
     updateEmail(req,res){
         Users.updateOne({_id: req._id},{email : req.body.email})
         .then(user => {
