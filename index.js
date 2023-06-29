@@ -9,6 +9,7 @@ const dotenv = require('dotenv')
 app.use(cors([{
     origin: "http://localhost:3000"
 }]))
+app.use('/uploads', express.static('uploads'));
 app.use(morgan('combined'))
 app.use(express.json())
 app.use(express.urlencoded({
